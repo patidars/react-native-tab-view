@@ -103,7 +103,7 @@ export default class SceneView<T extends Route> extends React.Component<
   };
 
   render() {
-    const { navigationState, index, layout, sceneContainerStyle } = this.props;
+    const { navigationState, index, layout, style, sceneContainerStyle } = this.props;
     const { loading } = this.state;
 
     const focused = navigationState.index === index;
@@ -121,7 +121,7 @@ export default class SceneView<T extends Route> extends React.Component<
             : focused
             ? StyleSheet.absoluteFill
             : null,
-            sceneContainerStyle,
+          sceneContainerStyle ?? style,
         ]}
       >
         {
